@@ -1,6 +1,5 @@
 using System;
 using Gtk;
-using Npgsql;
 using System.Runtime.Serialization.Json;
 using System.IO;
 using System.Text;
@@ -11,6 +10,7 @@ namespace NepConSharp
 	{
 		private static LoginWindow loginWindow;
 		private static MainWindow mainWindow;
+		private static SystemInfoDialog systemInfoDialog;
 		private static string homePath;
 		//private static NpgsqlConnection dbConn;
 
@@ -53,6 +53,8 @@ namespace NepConSharp
 		{
 			if (AuthenticateUser (name, password)) {
 				System.Console.WriteLine ("AUTHENTICATED!");
+				systemInfoDialog = new SystemInfoDialog();
+				systemInfoDialog.Show();
 				mainWindow = new MainWindow ();
 				loginWindow.Hide ();
 				mainWindow.Show ();
