@@ -1,0 +1,27 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="NepConSharp/Main.cs">
+    <Files>
+      <File FileName="NepConSharp/MainWindow.cs" Line="1" Column="1" />
+      <File FileName="NepConSharp/Main.cs" Line="69" Column="10" />
+      <File FileName="NepConSharp/LoginWindow.cs" Line="1" Column="1" />
+      <File FileName="NepConSharp/DBConnectionInformation.cs" Line="4" Column="22" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State expanded="True">
+          <Node name="NepConSharp" expanded="True">
+            <Node name="References" expanded="True" />
+            <Node name="Main.cs" selected="True" />
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <Breakpoint file="/home/grant/VMShare/NepConSharp/NepConSharp/Main.cs" line="64" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
