@@ -6,9 +6,19 @@ namespace NepConSharp
 	{
 		private static string UserHome = null; 
 
-		public static string GetDBSettingsFile (bool fullPath = false)
+		public static string GetSettingsFile (bool fullPath = false)
 		{ 
-			var file = "dbSettings.json";
+			var file = "settings.json";
+			if (fullPath) {
+				return GetAppSettingsDir(true) + "/" + file;
+			} else {
+				return file; 
+			}
+		}
+
+		public static string GetSystemsFile (bool fullPath = false)
+		{ 
+			var file = "systems.json";
 			if (fullPath) {
 				return GetAppSettingsDir(true) + "/" + file;
 			} else {
