@@ -73,10 +73,10 @@
     <Compile Include="AssemblyInfo.cs" />
     <Compile Include="LoginWindow.cs" />
     <Compile Include="gtk-gui\NepConSharp.LoginWindow.cs" />
-    <Compile Include="DBConnectionInformation.cs" />
     <Compile Include="Config.cs" />
     <Compile Include="SystemInfoDialog.cs" />
     <Compile Include="gtk-gui\NepConSharp.SystemInfoDialog.cs" />
+    <Compile Include="SystemInformation.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>
