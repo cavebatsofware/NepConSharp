@@ -10,6 +10,8 @@ namespace NepConSharp
 	{
 		private static LoginWindow loginWindow;
 		private static MainWindow mainWindow;
+		private static SystemInfoDialog systemInfoDialog;
+		//private static NpgsqlConnection dbConn;
 
 		public static void Main (string[] args)
 		{
@@ -29,6 +31,8 @@ namespace NepConSharp
 		{
 			if (AuthenticateUser (name, password)) {
 				System.Console.WriteLine ("AUTHENTICATED!");
+				systemInfoDialog = new SystemInfoDialog();
+				systemInfoDialog.Show();
 				mainWindow = new MainWindow ();
 				loginWindow.Hide ();
 				mainWindow.Show ();
