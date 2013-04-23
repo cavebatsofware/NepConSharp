@@ -3,6 +3,9 @@
 
 public partial class MainWindow
 {
+	private global::Gtk.ScrolledWindow GtkScrolledWindow;
+	private global::Gtk.TreeView lstSystem;
+	
 	protected virtual void Build ()
 	{
 		global::Stetic.Gui.Initialize (this);
@@ -10,6 +13,16 @@ public partial class MainWindow
 		this.Name = "MainWindow";
 		this.Title = global::Mono.Unix.Catalog.GetString ("MainWindow");
 		this.WindowPosition = ((global::Gtk.WindowPosition)(4));
+		// Container child MainWindow.Gtk.Container+ContainerChild
+		this.GtkScrolledWindow = new global::Gtk.ScrolledWindow ();
+		this.GtkScrolledWindow.Name = "GtkScrolledWindow";
+		this.GtkScrolledWindow.ShadowType = ((global::Gtk.ShadowType)(1));
+		// Container child GtkScrolledWindow.Gtk.Container+ContainerChild
+		this.lstSystem = new global::Gtk.TreeView ();
+		this.lstSystem.CanFocus = true;
+		this.lstSystem.Name = "lstSystem";
+		this.GtkScrolledWindow.Add (this.lstSystem);
+		this.Add (this.GtkScrolledWindow);
 		if ((this.Child != null)) {
 			this.Child.ShowAll ();
 		}

@@ -55,20 +55,16 @@ namespace NepConSharp
 
 		public static List<SystemInformation> GetAll ()
 		{
-			if (Items == null) {
-				LoadAll ();
-			}
+			if (Items == null) LoadAll ();
 			return Items;
 		}
 
 		public static List<SystemInformation> GetAllGW ()
 		{
+			if (Items == null) LoadAll ();
 			var allGW = new List<SystemInformation> ();
-			foreach (SystemInformation info in Items) {
-				if (info.isgw.ToLower() == "true") {
-					allGW.Add(info);
-				}
-			}
+			foreach (SystemInformation info in Items) 
+				if (info.isgw.ToLower() == "true") allGW.Add(info);
 			return allGW;
 		}
 
@@ -77,6 +73,7 @@ namespace NepConSharp
 			if (reload || Items == null) {
 				var jsonParser = new DataContractJsonSerializer (typeof(List<SystemInformation>));
 				Items = (List<SystemInformation>)jsonParser.ReadObject (File.OpenText (GetSystemsFile (true)).BaseStream);
+				return true;
 			} else {
 				return true;
 			}
@@ -85,6 +82,11 @@ namespace NepConSharp
 		public static string GetSystemsFile (bool fullPath = false)
 		{
 			return Config.GetSystemsFile (fullPath);
+		}
+
+		public override string ToString ()
+		{
+			return name;
 		}
 	}
 }

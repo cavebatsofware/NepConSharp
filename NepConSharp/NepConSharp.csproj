@@ -59,6 +59,15 @@
     <Reference Include="Mono.Posix" />
     <Reference Include="Mono.Debugger.Soft" />
     <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="DiffieHellman">
+      <HintPath>..\..\..\Source\SharpSSH-1.1.1.13.src\bin\Release\DiffieHellman.dll</HintPath>
+    </Reference>
+    <Reference Include="Org.Mentalis.Security">
+      <HintPath>..\..\..\Source\SharpSSH-1.1.1.13.src\bin\Release\Org.Mentalis.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Tamir.SharpSSH">
+      <HintPath>..\..\..\Source\SharpSSH-1.1.1.13.src\bin\Release\Tamir.SharpSSH.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="gtk-gui\gui.stetic">

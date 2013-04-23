@@ -1,27 +1,27 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="NepConSharp/Main.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="NepConSharp/MainWindow.cs">
     <Files>
-      <File FileName="NepConSharp/MainWindow.cs" Line="1" Column="1" />
-      <File FileName="NepConSharp/Main.cs" Line="69" Column="10" />
+      <File FileName="NepConSharp/MainWindow.cs" Line="37" Column="3" />
+      <File FileName="NepConSharp/Main.cs" Line="24" Column="33" />
       <File FileName="NepConSharp/LoginWindow.cs" Line="1" Column="1" />
-      <File FileName="NepConSharp/DBConnectionInformation.cs" Line="4" Column="22" />
+      <File FileName="NepConSharp/SystemInformation.cs" Line="84" Column="16" />
+      <File FileName="NepConSharp/Config.cs" Line="27" Column="4" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State expanded="True">
+          <Option id="ShowAllFiles" value="True" />
           <Node name="NepConSharp" expanded="True">
             <Node name="References" expanded="True" />
-            <Node name="Main.cs" selected="True" />
+            <Node name="MainWindow.cs" selected="True" />
           </Node>
         </State>
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore>
-      <Breakpoint file="/home/grant/VMShare/NepConSharp/NepConSharp/Main.cs" line="64" />
-    </BreakpointStore>
+    <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>
