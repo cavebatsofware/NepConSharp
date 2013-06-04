@@ -15,22 +15,16 @@ namespace NepConSharp
 		{
 			Application.Init ();
 			loginWindow = new LoginWindow ();
+			loginWindow.LoginClicked += (sender, data) => BeginLogin (data.Username, data.Password);
 			loginWindow.Show ();
 			Application.Run ();
-		}
-
-		public static bool LoadConfig (string file)
-		{
-			SystemInformation.LoadAll ();
-			return true;
 		}
 
 		public static void BeginLogin (string name, string password)
 		{
 			if (AuthenticateUser (name, password)) {
 				System.Console.WriteLine ("AUTHENTICATED!");
-				mainWindow = new MainWindow ();
-				loginWindow.Hide ();
+				mainWindow = new MainWindow (name, password);
 				mainWindow.Show ();
 			} else {
 				System.Console.WriteLine ("AUTHENTICATION FAILED!");
