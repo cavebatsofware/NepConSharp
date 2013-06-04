@@ -5,11 +5,14 @@ public partial class MainWindow
 {
 	private global::Gtk.UIManager UIManager;
 	private global::Gtk.Action FileAction;
-	private global::Gtk.Action LoadSettingsFileAction;
+	private global::Gtk.Action LoadSettingsAction;
 	private global::Gtk.Action connectAction;
 	private global::Gtk.Action disconnectAction;
 	private global::Gtk.Action newAction;
 	private global::Gtk.Action openAction;
+	private global::Gtk.Action SaveSettingsAction;
+	private global::Gtk.Action deleteAction;
+	private global::Gtk.Action ChangePasswordAction;
 	private global::Gtk.VBox vbox1;
 	private global::Gtk.MenuBar menubar1;
 	private global::Gtk.Toolbar toolbar1;
@@ -28,9 +31,9 @@ public partial class MainWindow
 		this.FileAction = new global::Gtk.Action ("FileAction", global::Mono.Unix.Catalog.GetString ("File"), null, null);
 		this.FileAction.ShortLabel = global::Mono.Unix.Catalog.GetString ("File");
 		w1.Add (this.FileAction, null);
-		this.LoadSettingsFileAction = new global::Gtk.Action ("LoadSettingsFileAction", global::Mono.Unix.Catalog.GetString ("Load settings file"), null, null);
-		this.LoadSettingsFileAction.ShortLabel = global::Mono.Unix.Catalog.GetString ("Load settings file");
-		w1.Add (this.LoadSettingsFileAction, null);
+		this.LoadSettingsAction = new global::Gtk.Action ("LoadSettingsAction", global::Mono.Unix.Catalog.GetString ("Load settings"), null, null);
+		this.LoadSettingsAction.ShortLabel = global::Mono.Unix.Catalog.GetString ("Load settings file");
+		w1.Add (this.LoadSettingsAction, null);
 		this.connectAction = new global::Gtk.Action ("connectAction", null, null, "gtk-connect");
 		w1.Add (this.connectAction, null);
 		this.disconnectAction = new global::Gtk.Action ("disconnectAction", null, null, "gtk-disconnect");
@@ -39,6 +42,14 @@ public partial class MainWindow
 		w1.Add (this.newAction, null);
 		this.openAction = new global::Gtk.Action ("openAction", null, null, "gtk-open");
 		w1.Add (this.openAction, null);
+		this.SaveSettingsAction = new global::Gtk.Action ("SaveSettingsAction", global::Mono.Unix.Catalog.GetString ("Save settings"), null, null);
+		this.SaveSettingsAction.ShortLabel = global::Mono.Unix.Catalog.GetString ("Save settings");
+		w1.Add (this.SaveSettingsAction, null);
+		this.deleteAction = new global::Gtk.Action ("deleteAction", null, null, "gtk-delete");
+		w1.Add (this.deleteAction, null);
+		this.ChangePasswordAction = new global::Gtk.Action ("ChangePasswordAction", global::Mono.Unix.Catalog.GetString ("Change password"), null, null);
+		this.ChangePasswordAction.ShortLabel = global::Mono.Unix.Catalog.GetString ("Change password");
+		w1.Add (this.ChangePasswordAction, null);
 		this.UIManager.InsertActionGroup (w1, 0);
 		this.AddAccelGroup (this.UIManager.AccelGroup);
 		this.Name = "MainWindow";
@@ -49,7 +60,7 @@ public partial class MainWindow
 		this.vbox1.Name = "vbox1";
 		this.vbox1.Spacing = 6;
 		// Container child vbox1.Gtk.Box+BoxChild
-		this.UIManager.AddUiFromString ("<ui><menubar name='menubar1'><menu name='FileAction' action='FileAction'><menuitem name='LoadSettingsFileAction' action='LoadSettingsFileAction'/></menu></menubar></ui>");
+		this.UIManager.AddUiFromString ("<ui><menubar name='menubar1'><menu name='FileAction' action='FileAction'><menuitem name='LoadSettingsAction' action='LoadSettingsAction'/><menuitem name='SaveSettingsAction' action='SaveSettingsAction'/><menuitem name='ChangePasswordAction' action='ChangePasswordAction'/></menu></menubar></ui>");
 		this.menubar1 = ((global::Gtk.MenuBar)(this.UIManager.GetWidget ("/menubar1")));
 		this.menubar1.Name = "menubar1";
 		this.vbox1.Add (this.menubar1);
@@ -58,7 +69,7 @@ public partial class MainWindow
 		w2.Expand = false;
 		w2.Fill = false;
 		// Container child vbox1.Gtk.Box+BoxChild
-		this.UIManager.AddUiFromString ("<ui><toolbar name='toolbar1'><toolitem name='connectAction' action='connectAction'/><toolitem name='disconnectAction' action='disconnectAction'/><toolitem name='newAction' action='newAction'/><toolitem name='openAction' action='openAction'/></toolbar></ui>");
+		this.UIManager.AddUiFromString ("<ui><toolbar name='toolbar1'><toolitem name='connectAction' action='connectAction'/><toolitem name='disconnectAction' action='disconnectAction'/><toolitem name='newAction' action='newAction'/><toolitem name='openAction' action='openAction'/><toolitem name='deleteAction' action='deleteAction'/></toolbar></ui>");
 		this.toolbar1 = ((global::Gtk.Toolbar)(this.UIManager.GetWidget ("/toolbar1")));
 		this.toolbar1.Name = "toolbar1";
 		this.toolbar1.ShowArrow = false;
@@ -113,6 +124,11 @@ public partial class MainWindow
 		this.Show ();
 		this.DeleteEvent += new global::Gtk.DeleteEventHandler (this.OnDeleteEvent);
 		this.connectAction.Activated += new global::System.EventHandler (this.OnConnectClicked);
+		this.disconnectAction.Activated += new global::System.EventHandler (this.OnDisconnectClicked);
 		this.newAction.Activated += new global::System.EventHandler (this.OnNewClicked);
+		this.openAction.Activated += new global::System.EventHandler (this.OnEditClicked);
+		this.SaveSettingsAction.Activated += new global::System.EventHandler (this.OnSaveSettingsClicked);
+		this.deleteAction.Activated += new global::System.EventHandler (this.OnDeleteClicked);
+		this.ChangePasswordAction.Activated += new global::System.EventHandler (this.OnChangePasswordClicked);
 	}
 }
