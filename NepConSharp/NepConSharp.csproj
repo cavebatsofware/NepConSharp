@@ -85,7 +85,12 @@
     <Compile Include="Config.cs" />
     <Compile Include="SystemInfoDialog.cs" />
     <Compile Include="gtk-gui\NepConSharp.SystemInfoDialog.cs" />
-    <Compile Include="SystemInformation.cs" />
+    <Compile Include="RemoteSystem.cs" />
+    <Compile Include="SystemEventArgs.cs" />
+    <Compile Include="ConnectionEventArgs.cs" />
+    <Compile Include="SystemList.cs" />
+    <Compile Include="RemoteUserInfo.cs" />
+    <Compile Include="RemoteConnection.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>
