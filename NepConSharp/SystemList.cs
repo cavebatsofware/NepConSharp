@@ -9,6 +9,29 @@ using System.Text;
 
 namespace NepConSharp
 {
+	public class ListEventArgs : EventArgs
+	{
+		public enum ListEvent {
+			SAVE, LOAD, SAVED, LOADED
+		}
+
+		public SystemList list;
+		public ListEvent action;
+		public delegate void CompleteHandler (bool success, ListEventArgs data);
+		public event CompleteHandler OnComplete;
+
+		public ListEventArgs (SystemList _list, ListEvent _action)
+		{
+			this.list = _list;
+			this.action = _action;
+		}
+
+		public void Complete (bool _success, ListEventArgs _data)
+		{
+			if (OnComplete != null) OnComplete (_success, _data);
+		}
+
+	}
 
 	public class SystemList : List<RemoteSystem>
 	{
@@ -21,10 +44,22 @@ namespace NepConSharp
 			this.SetCredentials (_username, _password);
 		}
 
+		//public SystemList (string _username, string _password)
+		//{
+		//	this.SetCredentials (_username, _password);
+		//}
+
+
 		// Called when a new system is added to the list. 
 		// This is not called when editing an existing system.
 		public delegate void SystemCreatedHandler (object sender, SystemEventArgs data);
 		public event SystemCreatedHandler SystemCreated;
+		// called when we need to save the list
+		public delegate void ListSaveHandler (object sender, ListEventArgs data);
+		public event ListSaveHandler ListSave;
+		// called when we need to save the list
+		public delegate void ListLoadHandler (object sender, ListEventArgs data);
+		public event ListLoadHandler ListLoad;
 		// Called when updating an existing system.
 		public delegate void SystemUpdatedHandler (object sender, SystemEventArgs data);
 		public event SystemUpdatedHandler SystemUpdated;
